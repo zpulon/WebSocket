@@ -1,0 +1,14 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs/WebSocket/DesignTimeBuild
+/.vs/WebSocket/v16
+/WebSocket/bin/Debug/net5.0
+/WebSocket/obj/Debug
+/WebSocket/obj
+/WebSocketConsole/bin/Debug/net5.0
+/WebSocketConsole/obj/Debug/net5.0
+/WebSocketConsole/obj
+/WebSocket/Properties
+/WebSocket/appsettings.Development.json

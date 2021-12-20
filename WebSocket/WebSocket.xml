@@ -1,0 +1,1203 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebSocket</name>
+    </assembly>
+    <members>
+        <member name="T:WebSocket.ChatEnum">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WebSocket.ChatEnum.AllRef">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WebSocket.ChatEnum.SingleRef">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WebSocket.ChatEnum.ToSelf">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebSocket.ChatRequest.PageIndex">
+            <summary>
+            页码 1开始
+            </summary>
+        </member>
+        <member name="P:WebSocket.ChatRequest.ClassRoomId">
+            <summary>
+            教室标识前端传入 测试 传999有数据21条
+            </summary>
+        </member>
+        <member name="P:WebSocket.ChatRequest.PageSize">
+            <summary>
+            页大小
+            </summary>
+        </member>
+        <member name="P:WebSocket.ChatRequest.desc">
+            <summary>
+            true 第一条为最新数据 false 第一条为旧数据
+            </summary>
+        </member>
+        <member name="T:WebSocket.CommonConstant">
+            <summary>
+            常量
+            </summary>
+        </member>
+        <member name="F:WebSocket.CommonConstant.CHAT_USER_PREFIX">
+             <summary>
+            用户数据 Key前缀标识
+             </summary>
+        </member>
+        <member name="F:WebSocket.CommonConstant.WEBSOCKET_PREFIX">
+             <summary>
+            用户数据 WEBSOCKET前缀标识
+             </summary>
+        </member>
+        <member name="F:WebSocket.CommonConstant.CLASSROOM_NUMBER">
+             <summary>
+            用户数据 WEBSOCKET前缀标识
+             </summary>
+        </member>
+        <member name="F:WebSocket.CommonConstant.CHAT_COMMON_PREFIX">
+             <summary>
+            发消息 Key前缀标识
+             </summary>
+        </member>
+        <member name="F:WebSocket.CommonConstant.CHAT_FROM_PREFIX">
+             <summary>
+            推送至指定用户消息 推送方Session Key前缀标识
+             </summary>
+        </member>
+        <member name="F:WebSocket.CommonConstant.CHAT_TO_PREFIX">
+             <summary>
+            推送至指定用户消息 接收方Session Key前缀标识
+             </summary>
+        </member>
+        <member name="F:WebSocket.CommonConstant.REDIS_MATCH_PREFIX">
+             <summary>
+            RedisTemplate 根据Key模糊匹配查询前缀
+             </summary>
+        </member>
+        <member name="T:WebSocket.DateJsonConverter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebSocket.DateJsonConverter.#ctor(System.String,WebSocket.DateTimeZoneHandling)">
+            <summary>
+            
+            </summary>
+            <param name="dateFormatString"></param>
+            <param name="dateTimeZoneHandling"></param>
+        </member>
+        <member name="M:WebSocket.DateJsonConverter.#ctor(System.String,WebSocket.DateTimeZoneHandling,System.DateTimeKind)">
+            <summary>
+            
+            </summary>
+            <param name="dateFormatString"></param>
+            <param name="dateTimeZoneHandling"></param>
+            <param name="defaultDateKind"></param>
+        </member>
+        <member name="M:WebSocket.DateJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="typeToConvert"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.DateJsonConverter.Write(System.Text.Json.Utf8JsonWriter,System.DateTime,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="value"></param>
+            <param name="options"></param>
+        </member>
+        <member name="T:WebSocket.DateTimeCore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebSocket.DateTimeCore.GetTimeStamp(System.DateTime)">
+            <summary>  
+            获取时间戳  
+            </summary>  
+            <returns></returns>  
+        </member>
+        <member name="M:WebSocket.DateTimeCore.ConvertDateTimeInt(System.DateTime)">
+            <summary>
+            DateTime时间格式转换为Unix时间戳格式
+            </summary>
+            <param name="time"> DateTime时间格式</param>
+            <returns>Unix时间戳格式</returns>
+        </member>
+        <member name="M:WebSocket.DateTimeCore.GetTime(System.String)">
+            <summary>
+            时间戳转为C#格式时间
+            </summary>
+            <param name="timeStamp">Unix时间戳格式</param>
+            <returns>C#格式时间</returns>
+        </member>
+        <member name="T:WebSocket.DateTimeZoneHandling">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WebSocket.DateTimeZoneHandling.Local">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WebSocket.DateTimeZoneHandling.UTC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebSocket.MessageRequest.Score">
+            <summary>
+            zzet 分数
+            </summary>
+        </member>
+        <member name="P:WebSocket.MessageRequest.ClassRoomId">
+            <summary>
+            教室标识前端传入 
+            </summary>
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.Id">
+            编号
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.Account">
+            账号
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.Nickname">
+            昵称
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.StudentNumber">
+            <summary>
+            学号
+            </summary>
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.Name">
+            姓名
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.Password">
+            密码
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.Sex">
+            性别 男/女
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.Email">
+            邮箱
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.Rating">
+            评级 1-5
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.State">
+            账号状态 冻结/正常
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.Type">
+            用户类型 学生/教师
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.RegisterTime">
+            注册时间
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.LoginIp">
+            登录IP
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.LoginTime">
+            登录时间
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.Image">
+            头像
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.Introduce">
+            介绍
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.DeleteState">
+            删除状态
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.UpdateUser">
+            修改人
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.UpdateTime">
+            修改时间
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.OpenId">
+            <summary>
+            微信用户标识
+            </summary>
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.SchoolId">
+            <summary>
+            学校ID
+            </summary>
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.SchoolType">
+            <summary>
+            初中、高中、初完中、高完中
+            </summary>
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.GraduationYear">
+            <summary>
+            年级 ps:高2020级历史方向
+            </summary>
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.SubjectIds">
+            <summary>
+            所属专业Ids
+            </summary>
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.SubjectName">
+            <summary>
+            所属专业名称
+            </summary>
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.SchoolName">
+            <summary>
+            学校名称
+            </summary>
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.OnlineSchoolNumber">
+            <summary>
+            云校学号
+            </summary>
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.ClassName">
+            <summary>
+            班级名称
+            </summary>
+        </member>
+        <member name="P:WebSocket.Basic.OS_User.TeacherId">
+            <summary>
+            助教老师ID
+            </summary>
+        </member>
+        <member name="P:WebSocket.Basic.Pager.PageIndex">
+            <summary>
+            页码
+            </summary>
+        </member>
+        <member name="P:WebSocket.Basic.Pager.PageSize">
+            <summary>
+            分页大小
+            </summary>
+        </member>
+        <member name="T:WebSocket.RedisMessage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebSocket.RedisMessage.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebSocket.RedisMessage.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:WebSocket.RedisMessage.Image" -->
+        <member name="P:WebSocket.RedisMessage.WebSocketId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebSocket.RedisMessage.Name">
+            <summary>
+            发送者消息名字
+            </summary>
+        </member>
+        <member name="P:WebSocket.RedisMessage.CreateaTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebSocket.RedisMessage.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="T:WebSocket.ResponseCodeDefines">
+            <summary>
+            返回参数说明
+            </summary>
+        </member>
+        <member name="F:WebSocket.ResponseCodeDefines.SuccessCode">
+            <summary>
+            成功 0
+            </summary>
+        </member>
+        <member name="F:WebSocket.ResponseCodeDefines.ModelStateInvalid">
+            <summary>
+            对象请求不合法 100
+            </summary>
+        </member>
+        <member name="F:WebSocket.ResponseCodeDefines.ArgumentNullError">
+            <summary>
+            参数不能为空 101
+            </summary>
+        </member>
+        <member name="F:WebSocket.ResponseCodeDefines.ObjectAlreadyExists">
+            <summary>
+            对象已存在 102
+            </summary>
+        </member>
+        <member name="F:WebSocket.ResponseCodeDefines.PartialFailure">
+            <summary>
+            局部已失效 103
+            </summary>
+        </member>
+        <member name="F:WebSocket.ResponseCodeDefines.NotFound">
+            <summary>
+            未找到对应信息 404
+            </summary>
+        </member>
+        <member name="F:WebSocket.ResponseCodeDefines.NotAllow">
+            <summary>
+            授权失效 403
+            </summary>
+        </member>
+        <member name="F:WebSocket.ResponseCodeDefines.ServiceError">
+            <summary>
+            服务器内部错误 500
+            </summary>
+        </member>
+        <member name="T:WebSocket.ResponseCodeEnum">
+            <summary>
+            响应结果返回值枚举
+            </summary>
+        </member>
+        <member name="F:WebSocket.ResponseCodeEnum.SuccessCode">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:WebSocket.ResponseCodeEnum.ModelStateInvalid">
+            <summary>
+            对象请求不合法
+            </summary>
+        </member>
+        <member name="F:WebSocket.ResponseCodeEnum.ArgumentNullError">
+            <summary>
+            参数不能为空
+            </summary>
+        </member>
+        <member name="F:WebSocket.ResponseCodeEnum.ObjectAlreadyExists">
+            <summary>
+            对象已存在
+            </summary>
+        </member>
+        <member name="F:WebSocket.ResponseCodeEnum.PartialFailure">
+            <summary>
+            局部已失效
+            </summary>
+        </member>
+        <member name="F:WebSocket.ResponseCodeEnum.NotFound">
+            <summary>
+            未找到对应信息
+            </summary>
+        </member>
+        <member name="F:WebSocket.ResponseCodeEnum.NotAllow">
+            <summary>
+            授权失效
+            </summary>
+        </member>
+        <member name="F:WebSocket.ResponseCodeEnum.ServiceError">
+            <summary>
+            服务器内部错误
+            </summary>
+        </member>
+        <member name="T:WebSocket.ResponseMessage">
+            <summary>
+            响应体
+            </summary>
+        </member>
+        <member name="P:WebSocket.ResponseMessage.Code">
+            <summary>
+            结果码
+            </summary>
+        </member>
+        <member name="P:WebSocket.ResponseMessage.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="M:WebSocket.ResponseMessage.#ctor">
+            <summary>
+            构造器
+            </summary>
+        </member>
+        <member name="M:WebSocket.ResponseMessage.IsSuccess">
+            <summary>
+            是否成功
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebSocket.ResponseMessage`1">
+            <summary>
+            携带数据的响应体
+            </summary>
+            <typeparam name="TEx"></typeparam>
+        </member>
+        <member name="P:WebSocket.ResponseMessage`1.Extension">
+            <summary>
+            携带数据
+            </summary>
+        </member>
+        <member name="T:WebSocket.PagingResponseMessage`1">
+            <summary>
+            分页响应体
+            </summary>
+            <typeparam name="Tentity"></typeparam>
+        </member>
+        <member name="P:WebSocket.PagingResponseMessage`1.PageIndex">
+            <summary>
+            分页索引
+            </summary>
+        </member>
+        <member name="P:WebSocket.PagingResponseMessage`1.PageSize">
+            <summary>
+            分页大小
+            </summary>
+        </member>
+        <member name="P:WebSocket.PagingResponseMessage`1.TotalCount">
+            <summary>
+            对象总数
+            </summary>
+        </member>
+        <member name="P:WebSocket.PagingResponseMessage`1.PageCount">
+            <summary>
+            分页数量
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:WebSocket.CommentController" -->
+        <member name="P:WebSocket.CommentController.Connections">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebSocket.CommentController.#ctor(WebSocket.IChatSessionService,WebSocket.ConnectionManager)">
+            <summary>
+            
+            </summary>
+            <param name="ichatSessionService"></param>
+            <param name="connections"></param>
+        </member>
+        <member name="M:WebSocket.CommentController.GetMessageList(WebSocket.ChatRequest)">
+            <summary>
+            进入直播间到redis 获取信息
+            </summary>
+            <param name="request">用户信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.CommentController.GetMessage(WebSocket.MessageRequest)">
+            <summary>
+            进入直播间到redis 获取单条信息
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.CommentController.GetClassRoomNumber(System.String)">
+            <summary>
+            获取在线人数   
+            </summary>
+            <param name="classRoomId">教室标识</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebSocket.Controllers.ElasticsearchController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebSocket.Controllers.ElasticsearchController.DefaultIndexAsync">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.Controllers.ElasticsearchController.DefaultSearch">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebSocket.WebSocketMessageHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebSocket.WebSocketMessageHandler.#ctor(WebSocket.ConnectionManager,WebSocket.IChatSessionService)">
+            <summary>
+            
+            </summary>
+            <param name="connection"></param>
+            <param name="_chatSessionService"></param>
+            <param name="userService"></param>
+        </member>
+        <member name="M:WebSocket.WebSocketMessageHandler.OnConnected(System.Net.WebSockets.WebSocket,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="socket"></param>
+            <param name="classRoomId"></param>
+            <param name="userId"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.WebSocketMessageHandler.Receive(System.Net.WebSockets.WebSocket,System.String,System.String,System.Net.WebSockets.WebSocketReceiveResult,System.Byte[])">
+            <summary>
+            介绍到信息
+            </summary>
+            <param name="socket"></param>
+            <param name="classRoomId"></param>
+            <param name="userId"></param>
+            <param name="name"></param>
+            <param name="result"></param>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebSocket.ChatSessionService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebSocket.ChatSessionService.#ctor(WebSocket.RedisHelper,WebSocket.IJsonHelper)">
+            <summary>
+            
+            </summary>
+            <param name="redis"></param>
+            <param name="jsonHelper"></param>
+        </member>
+        <member name="M:WebSocket.ChatSessionService.GetMessageAsync``1(System.String,System.Double)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="classRoomId"></param>
+            <param name="score"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ChatSessionService.SaveMessageAsync(System.String,WebSocket.RedisMessage)">
+            <summary>
+            
+            </summary>
+            <param name="classRoomId"></param>
+            <param name="redisMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ChatSessionService.GetMessageList(System.String,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="classRoomId"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <param name="desc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ChatSessionService.GetSocketByIdAsync``1(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key">classRoomId</param>
+            <param name="dataKey">userId</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ChatSessionService.HashGetAll``1(System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ChatSessionService.SaveClassRoomSndUserInfo``1(``0,System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="expiry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ChatSessionService.WebSocketHashSet``1(System.String,System.String,``0)">
+            <summary>
+            websocket 存入redis
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="dataKey"></param>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ChatSessionService.Getone``1(System.Int64)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ChatSessionService.ConvertJson``1(``0)">
+            <summary>
+            将对象转换成string字符串
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ChatSessionService.ConvertRedisValue``1(``0[])">
+            <summary>
+            将值集合转换成RedisValue集合
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="redisValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ChatSessionService.ConvetList``1(StackExchange.Redis.RedisValue[])">
+            <summary>
+            将值反系列化成对象集合
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ChatSessionService.ConvertObj``1(StackExchange.Redis.RedisValue)">
+            <summary>
+            将值反系列化成对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ChatSessionService.SortedSetAdd``1(System.String,``0,System.Nullable{System.Double})">
+            <summary>
+            添加一个值到Key
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="score">排序分数，为空将获取集合中最大score加1</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ChatSessionService.SortedSetLength(System.String)">
+            <summary>
+            获取集合中的数量
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ChatSessionService.SortedSetRangeByRank``1(System.String,System.Int64,System.Int64,System.Boolean)">
+            <summary>
+            获取从 start 开始的 stop 条数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="start">起始数</param>
+            <param name="stop">-1表示到结束，0为1条</param>
+            <param name="desc">是否按降序排列</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ChatSessionService._GetScore(System.String)">
+            <summary>
+            获取指定Key中最大Score值,
+            </summary>
+            <param name="key">key名称，注意要先添加上Key前缀</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebSocket.IAsyncJsonHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebSocket.IAsyncJsonHelper.ToJsonAsync(System.IO.Stream,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IAsyncJsonHelper.ToObjectAsync(System.IO.Stream,System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IAsyncJsonHelper.ToObjectAsync``1(System.IO.Stream)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TObject"></typeparam>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IChatSessionService.GetMessageAsync``1(System.String,System.Double)">
+            <summary>
+            /
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="classRoomId"></param>
+            <param name="score"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IChatSessionService.SaveMessageAsync(System.String,WebSocket.RedisMessage)">
+            <summary>
+            保存发送的消息
+            </summary>
+            <param name="classRoomId">教室id</param>
+            <param name="redisMessage">消息体</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IChatSessionService.GetMessageList(System.String,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            消息分页
+            </summary>
+            <param name="classRoomId">教室id</param>
+            <param name="pageIndex">起始数</param>
+            <param name="pageSize">-1表示到结束，0为1条 所以需要减1</param>
+            <param name="desc">是否按降序排列</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IChatSessionService.GetMessageCount(System.String)">
+            <summary>
+            获取消息条数
+            </summary>
+            <param name="classRoomId">教室id</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IChatSessionService.GetSocketByIdAsync``1(System.String,System.String)">
+            <summary>
+            通过教室id userid获取信息
+            </summary>
+            <param name="key">classRoomId</param>
+            <param name="dataKey">userId</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IChatSessionService.HashGetAll``1(System.String)">
+            <summary>
+            通过key获取hash中的字典值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">教室id</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IChatSessionService.SaveClassRoomSndUserInfo``1(``0,System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            
+            </summary>
+            <param name="key">websocket</param>
+            <param name="value">教室标识_user标识_名字</param>
+            <param name="expiry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IChatSessionService.Getone``1(System.Int64)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IChatSessionService.GetClassRoomSndUserInfo``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T">websocket</typeparam>
+            <param name="key"></param>
+            <returns>第一个string classroomid，第二个userid_第三个名字</returns>
+        </member>
+        <member name="M:WebSocket.IChatSessionService.WebSocketHashSet``1(System.String,System.String,``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T">websocket</typeparam>
+            <param name="key">classRoomId</param>
+            <param name="dataKey">userId</param>
+            <param name="t">websocket</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IChatSessionService.HashDeleteAsync(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key">classRoomId</param>
+            <param name="dataKey">userId</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IChatSessionService.StringDeleteAsync``1(``0)">
+            <summary>
+            
+            </summary>
+            <param name="key">websocket</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IChatSessionService.Incr(System.String)">
+            <summary>
+            自增
+            </summary>
+            <param name="classRoomId">websocket</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IChatSessionService.Decr(System.String)">
+            <summary>
+            自减
+            </summary>
+            <param name="classRoomId">websocket</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IChatSessionService.HashStringLength(System.String)">
+            <summary>
+            在线人数
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebSocket.IJsonHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebSocket.IJsonHelper.ToJson(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IJsonHelper.ToObject(System.String,System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="json"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.IJsonHelper.ToObject``1(System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TObject"></typeparam>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebSocket.MD5Helper">
+            <summary>
+            加密用的
+            </summary>
+        </member>
+        <member name="M:WebSocket.MD5Helper.MD5EncodingOnly(System.String)">
+            <summary>
+            MD5 加密字符串
+            </summary>
+            <param name="content">源字符串</param>
+            <returns>加密后字符串</returns>
+        </member>
+        <member name="M:WebSocket.MD5Helper.MD5EncodingWithSalt(System.String,System.String)">
+            <summary>
+            MD5盐值加密
+            </summary>
+            <param name="content">源字符串</param>
+            <param name="salt">盐值</param>
+            <returns>加密后字符串</returns>
+        </member>
+        <member name="T:WebSocket.RedisHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebSocket.RedisHelper.#ctor(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="connectionString"></param>
+            <param name="passWord"></param>
+            <param name="instanceName"></param>
+            <param name="defaultDB"></param>
+        </member>
+        <member name="M:WebSocket.RedisHelper.GetConnect">
+            <summary>
+            获取ConnectionMultiplexer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.RedisHelper.GetDatabase(System.Int32)">
+            <summary>
+            获取数据库
+            </summary>
+            <param name="db">数据库序号</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.RedisHelper.GetServer(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="configName"></param>
+            <param name="endPointsIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.RedisHelper.GetSubscriber(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="configName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.RedisHelper.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WebSocket.Manager.TestData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebSocket.Manager.TestData.IndexManyAsync">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:WebSocket.Manager.TestData.Search">
+            <summary>
+            搜索
+            </summary>
+        </member>
+        <member name="T:WebSocket.Manager.Url">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WebSocket.ConnectionManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WebSocket.ConnectionManager._connections">
+            <summary>
+            通过classRoomId_userId 组合为key 
+            </summary>
+        </member>
+        <member name="M:WebSocket.ConnectionManager.GetSocketById(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="classRoomId"></param>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ConnectionManager.GetAllConnectionByClassRoomId(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="classRoomId">教室标识</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ConnectionManager.GetSelfWebsocket(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="classRoomId">教室标识</param>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ConnectionManager.GetId(System.Net.WebSockets.WebSocket)">
+            <summary>
+            
+            </summary>
+            <param name="socket"></param>
+            <returns>元组 第一个 教室标识 第二个用户标识</returns>
+        </member>
+        <member name="M:WebSocket.ConnectionManager.RemoveSocketAsync(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="classRoomId"></param>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.ConnectionManager.AddsSocketAsync(System.Net.WebSockets.WebSocket,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="socket"></param>
+            <param name="classRoomId"></param>
+            <param name="userId"></param>
+        </member>
+        <member name="M:WebSocket.ConnectionManager.GetClassRoomByIdAsync(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="classRoomId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebSocket.SocketHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebSocket.SocketHandler.Connections">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebSocket.SocketHandler.#ctor(WebSocket.ConnectionManager)">
+            <summary>
+            
+            </summary>
+            <param name="connections"></param>
+        </member>
+        <member name="M:WebSocket.SocketHandler.OnConnected(System.Net.WebSockets.WebSocket,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="socket"></param>
+            <param name="userId"></param>
+            <param name="classRoomId"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.SocketHandler.OnDisconnected(System.Net.WebSockets.WebSocket)">
+            <summary>
+            
+            </summary>
+            <param name="socket"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.SocketHandler.SendMessage(System.Net.WebSockets.WebSocket,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="socket"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.SocketHandler.SendMessage(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="clssRoomId"></param>
+            <param name="userId"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.SocketHandler.SendMessageToAll(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="classRoomId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.SocketHandler.SendMessageToSelf(System.String,System.String,System.String)">
+            <summary>
+            ping
+            </summary>
+            <param name="message"></param>
+            <param name="classRoomId"></param>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.SocketHandler.Receive(System.Net.WebSockets.WebSocket,System.String,System.String,System.Net.WebSockets.WebSocketReceiveResult,System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="socket"></param>
+            <param name="classRoomId"></param>
+            <param name="userId"></param>
+            <param name="result"></param>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebSocket.SocketsExtension">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebSocket.SocketsExtension.AddSocketManager(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.SocketsExtension.MapSocket(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString,WebSocket.SocketHandler)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="path"></param>
+            <param name="socket"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebSocket.SocketsMiddleware">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebSocket.SocketsMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,WebSocket.SocketHandler)">
+            <summary>
+            
+            </summary>
+            <param name="next"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:WebSocket.SocketsMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+             wesocket 入口
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebSocket.SocketsMiddleware.Receive(System.Net.WebSockets.WebSocket,System.Action{System.Net.WebSockets.WebSocketReceiveResult,System.Byte[]})">
+            <summary>
+            
+            </summary>
+            <param name="webSocket"></param>
+            <param name="messageHandle"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebSocket.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebSocket.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebSocket.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:WebSocket.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:WebSocket.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,System.IServiceProvider)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="serviceProvider"></param>
+        </member>
+    </members>
+</doc>

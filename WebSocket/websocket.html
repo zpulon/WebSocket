@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>WebSockets</title>
+</head>  
+
+<body>
+    <h1>Websocket web client</h1>
+    <br/>
+    <input type="text" placeholder="please enter your message" id="messageTosend" />
+    <button id="sendButton">Send</button>
+    <ul id="messages"></ul>
+    <script type="text/javascript">
+        var uri = "ws://192.168.2.194:5001/websocket/chat?userId=555&classRoomId=000&name=萨达撒";
+
+        function connect() {
+            socket = new WebSocket(uri);
+            socket.onopen = function(e) {
+                console.log("connection estabished");
+            };
+            socket.onclose = function(e) {
+                console.log("connection closed");
+            };
+            socket.onmessage = function(e) {
+                appendItem(list, e.data);
+                console.log("onmessage ---------");
+                console.log(e.data);
+            }
+        }
+        connect();
+        var list = document.getElementById("messages");
+        var button = document.getElementById("sendButton");
+        button.addEventListener("click", function() {
+            var sendMessage = function(element) {
+                console.log("sending message ---------");
+                console.log(element);
+                socket.send(element);
+            };
+
+
+            var message = document.getElementById("messageTosend");
+            sendMessage(message.value);
+        });
+
+        function appendItem(list, message) {
+            var item = document.createElement("li");
+            item.appendChild(document.createTextNode(message));
+            list.appendChild(item);
+        }
+    </script>
+</body>
+
+</html>
